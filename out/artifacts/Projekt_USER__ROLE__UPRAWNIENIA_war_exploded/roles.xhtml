@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+        <ui:insert name="header">
+            <ui:include src="headerTemplate.xhtml"/>
+        </ui:insert>
+</h:head>
+<h:body>
+    <h:outputLabel value="ROLE"/>
+
+    <p:dataTable id="RoleTable" var="roleForm" value="#{roleListController.roleFormList}">
+
+        <p:column headerText="Id">
+            <h:outputText value="#{roleForm.id}" />
+        </p:column>
+
+        <p:column headerText="Nazwa Roli">
+            <h:outputText value="#{roleForm.name}" />
+        </p:column>
+
+        <p:column headerText="Skrót">
+            <h:outputText value="#{roleForm.shortcuts}" />
+        </p:column>
+
+        <p:column headerText=" ">
+            <p:commandButton value="Edytuj" action="#{roleListController.getURL(roleForm.id)}"/>
+        </p:column>
+
+        <p:column headerText="Usuń">
+            <p:commandButton value="Usuń" actionListener="#{roleListController.deleteRole(roleForm)}" update="RoleTable" action="roles?faces-redirect=true">
+                <p:confirm header="Potwierdzenie" message="Czy na pewno chcesz usunąć tę rolę?" icon="ui-icon-alert" />
+            </p:commandButton>
+
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                <p:commandButton value="Tak" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                <p:commandButton value="Nie" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+        </p:column>
+
+    </p:dataTable>
+
+    <h:form>
+        <h:commandButton action="add_role?faces-redirect=true" value="Dodaj role" />
+    </h:form>
+    <h:form>
+        <h:commandButton action="index?faces-redirect=true" value="Wróc" />
+    </h:form>
+</h:body>
+</html>
