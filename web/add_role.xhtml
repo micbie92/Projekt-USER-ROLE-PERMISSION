@@ -5,18 +5,32 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-<h:form>
-    <h3>DODAWANIE NOWEJ ROLI:</h3>
-    <p:panelGrid columns="2">
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+        <p:panelGrid style="margin-top:20px">
+            <p:row>
+                <p:column colspan="2" style="text-align: center"><b> DODAWANIE ROLI </b></p:column>
+            </p:row>
 
-        <h:outputText value="Nazwa:" />
-        <h:inputText value="#{addRoleController.roleForm.name}" />
+            <p:row>
+                <p:column> Nazwa: </p:column>
+                <p:column>
+                    <h:inputText value="#{addRoleController.roleForm.name}" />
+                </p:column>
+            </p:row>
 
-        <h:outputText value="Skrót" />
-        <h:inputText value="#{addRoleController.roleForm.shortcuts}" />
-    </p:panelGrid>
+            <p:row>
+            <p:column> Skrót: </p:column>
+            <p:column>
+                <h:inputText value="#{addRoleController.roleForm.shortcuts}" />
+            </p:column>
+        </p:row>
+        </p:panelGrid>
 
-    <h:commandButton value="Dodaj" actionListener="#{addRoleController.addRoleForm()}" action="roles?faces-redirect=true"></h:commandButton>
-    <h:commandButton action="roles?faces-redirect=true" value="Wróc" />
-</h:form>
+        <h:commandButton value="Dodaj" actionListener="#{addRoleController.addRoleForm()}" action="roles?faces-redirect=true"></h:commandButton>
+        <h:commandButton action="roles?faces-redirect=true" value="Wróc" />
+    </h:form>
+</h:body>
 </html>

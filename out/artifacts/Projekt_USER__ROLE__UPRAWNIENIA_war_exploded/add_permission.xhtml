@@ -5,18 +5,35 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-<h:form>
-    <h:outputText>DODAWANIE NOWEGO UPRAWNIENIA:</h:outputText>
-    <p:panelGrid columns="2">
+<h:head>
+</h:head>
 
-        <h:outputText value="Nazwa:" />
-        <h:inputText value="#{addPermissionController.permissionForm.name}" />
+<h:body>
+    <h:form>
+        <p:panelGrid style="margin-top:20px">
 
-        <h:outputText value="Skrót" />
-        <h:inputText value="#{addPermissionController.permissionForm.shortcut}" />
-    </p:panelGrid>
+            <p:row>
+                <p:column colspan="2" style="text-align: center"><b> DODAWANIE UPRAWNIENIA </b></p:column>
+            </p:row>
 
-    <h:commandButton value="Dodaj" actionListener="#{addPermissionController.addPermissionForm()}" action="permissions?faces-redirect=true"></h:commandButton>
-    <h:commandButton action="permissions?faces-redirect=true" value="Wróc" />
-</h:form>
+            <p:row>
+                <p:column> Nazwa: </p:column>
+                <p:column>
+                    <h:inputText value="#{addPermissionController.permissionForm.name}" />
+                </p:column>
+            </p:row>
+
+            <p:row>
+                <p:column> Skrót: </p:column>
+                <p:column>
+                    <h:inputText value="#{addPermissionController.permissionForm.shortcut}" />
+                </p:column>
+            </p:row>
+
+        </p:panelGrid>
+
+        <h:commandButton value="Dodaj" actionListener="#{addPermissionController.addPermissionForm()}" action="permissions?faces-redirect=true"></h:commandButton>
+        <h:commandButton action="permissions?faces-redirect=true" value="Wróc" />
+    </h:form>
+</h:body>
 </html>

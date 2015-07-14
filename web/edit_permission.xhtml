@@ -6,14 +6,26 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:form>
-    <h:outputText>EDYCJA UPRAWNIENIA:</h:outputText>
-    <p:panelGrid columns="2">
+    <p:panelGrid style="margin-top:20px">
 
-        <h:outputText value="Nazwa:" />
-        <h:inputText value="#{editPermissionController.permissionForm.name}" />
+        <p:row>
+            <p:column colspan="2" style="text-align: center"><b> EDYCJA UPRAWNIENIA </b></p:column>
+        </p:row>
 
-        <h:outputText value="Skrót" />
-        <h:inputText value="#{editPermissionController.permissionForm.shortcut}" />
+        <p:row>
+            <p:column> Nazwa: </p:column>
+            <p:column>
+                <h:inputText value="#{editPermissionController.permissionForm.name}" />
+            </p:column>
+        </p:row>
+
+        <p:row>
+            <p:column> Skrót: </p:column>
+            <p:column>
+                <h:inputText value="#{editPermissionController.permissionForm.shortcut}" />
+            </p:column>
+        </p:row>
+
     </p:panelGrid>
 
     <h:commandButton value="Zapisz zmiany" actionListener="#{editPermissionController.editPermissionForm()}" action="permissions?faces-redirect=true"></h:commandButton>

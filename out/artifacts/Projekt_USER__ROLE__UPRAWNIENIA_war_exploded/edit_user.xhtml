@@ -9,56 +9,56 @@
 </h:head>
 
 <h:body>
-<h:form>
-    <p:panelGrid style="margin-top:20px">
-        <p:row>
-            <p:column colspan="2" style="text-align: center"><b> EDYCJA UŻYTKOWNIKA </b></p:column>
-        </p:row>
+    <h:form>
+        <p:panelGrid style="margin-top:20px">
+            <p:row>
+                <p:column colspan="2" style="text-align: center"><b> EDYCJA UŻYTKOWNIKA </b></p:column>
+            </p:row>
 
-        <p:row>
-            <p:column> Imię: </p:column>
-            <p:column>
-                <h:inputText value="#{editUserController.userForm.name}" />
-            </p:column>
-        </p:row>
+            <p:row>
+                <p:column> Imię: </p:column>
+                <p:column>
+                    <h:inputText value="#{editUserController.userForm.name}" />
+                </p:column>
+            </p:row>
 
-        <p:row>
-            <p:column> Nazwisko: </p:column>
-            <p:column>
-                <h:inputText value="#{editUserController.userForm.lastName}" />
-            </p:column>
-        </p:row>
+            <p:row>
+                <p:column> Nazwisko: </p:column>
+                <p:column>
+                    <h:inputText value="#{editUserController.userForm.lastName}" />
+                </p:column>
+            </p:row>
 
-        <p:row>
-            <p:column> E-mail: </p:column>
-            <p:column>
-                <h:inputText value="#{editUserController.userForm.email}" />
-            </p:column>
-        </p:row>
+            <p:row>
+                <p:column> E-mail: </p:column>
+                <p:column>
+                    <h:inputText value="#{editUserController.userForm.email}" />
+                </p:column>
+            </p:row>
 
-        <p:row>
-            <p:column> Numer telefonu</p:column>
-            <p:column>
-                <h:inputText value="#{editUserController.userForm.phoneNumber}" />
-            </p:column>
-        </p:row>
+            <p:row>
+                <p:column> Numer telefonu</p:column>
+                <p:column>
+                    <h:inputText value="#{editUserController.userForm.phoneNumber}" />
+                </p:column>
+            </p:row>
 
-        <p:row>
-            <p:column colspan="2" style="text-align: center"> <strong> Wybierz role użytkownika </strong></p:column>
-        </p:row>
-        <p:row>
-                <p:column style="width: 50%; text-align: center" > Dostepne role: </p:column>
-                <p:column style="width: 50%; text-align: center"> Role użytkownika: </p:column>
-        </p:row>
-        <p:row>
-            <p:column colspan="2">
-                <p:pickList id="pickList" value="#{editUserController.rolesToPickList}" var="roles" itemLabel="#{roles}" itemValue="#{roles}"/>
-            </p:column>
-        </p:row>
-    </p:panelGrid>
+            <p:row>
+                <p:column colspan="2" style="text-align: center"> <strong> Wybierz role użytkownika </strong></p:column>
+            </p:row>
+            <p:row>
+                    <p:column style="width: 50%; text-align: center" > Dostepne role: </p:column>
+                    <p:column style="width: 50%; text-align: center"> Role użytkownika: </p:column>
+            </p:row>
+            <p:row>
+                <p:column colspan="2">
+                    <p:pickList id="pickList" value="#{editUserController.rolesToPickList}" var="roles" itemLabel="#{roles}" itemValue="#{roles}"/>
+                </p:column>
+            </p:row>
+        </p:panelGrid>
 
-    <h:commandButton value="Zapisz zmiany" actionListener="#{editUserController.editUserForm()}" action="users?faces-redirect=true"></h:commandButton>
-    <h:commandButton action="users?faces-redirect=true" value="Wróc" />
-</h:form>
+        <h:commandButton value="Zapisz zmiany" actionListener="#{editUserController.editUserForm()}" action="users?faces-redirect=true"></h:commandButton>
+        <h:commandButton action="users?faces-redirect=true" value="Wróc" />
+    </h:form>
 </h:body>
 </html>

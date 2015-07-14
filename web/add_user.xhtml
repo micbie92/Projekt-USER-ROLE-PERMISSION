@@ -10,29 +10,60 @@
 
 </h:head>
 <h:body>
-<h:form>
-    <h1>DODAWANIE NOWEGO UŻYTKOWNIKA:</h1>
-    <p:panelGrid columns="2">
+    <h:form>
+        <p:panelGrid style="margin-top: 20px">
 
-        <h:outputText value="Imię:" />
-        <h:inputText value="#{addUserController.userForm.name}" />
+            <p:row>
+                <p:column colspan="2" style="text-align: center"><b> DODAWANIE UŻYTKOWNIKA </b></p:column>
+            </p:row>
 
-        <h:outputText value="Nazwisko" />
-        <h:inputText value="#{addUserController.userForm.lastName}" />
+            <p:row>
+                <p:column> Imię: </p:column>
+                <p:column>
+                    <h:inputText value="#{addUserController.userForm.name}" />
+                </p:column>
+            </p:row>
 
-        <h:outputText value="e-mail" />
-        <h:inputText value="#{addUserController.userForm.email}" />
+            <p:row>
+                <p:column> Nazwisko: </p:column>
+                <p:column>
+                    <h:inputText value="#{addUserController.userForm.lastName}" />
+                </p:column>
+            </p:row>
 
-        <h:outputText value="Numer telefonu" />
-        <h:inputText value="#{addUserController.userForm.phoneNumber}" />
+            <p:row>
+                <p:column> E-mail: </p:column>
+                <p:column>
+                    <h:inputText value="#{addUserController.userForm.email}" />
+                </p:column>
+            </p:row>
 
-        <h:outputText value="Wybierz role danego użytkownika" />
-        <p:pickList id="pickList" value="#{addUserController.rolesToPickList}" var="roles" itemLabel="#{roles}" itemValue="#{roles}"/>
-    </p:panelGrid>
+            <p:row>
+                <p:column> Numer Telefonu: </p:column>
+                <p:column>
+                    <h:inputText value="#{addUserController.userForm.phoneNumber}" />
+                </p:column>
+            </p:row>
+
+            <p:row>
+                <p:column colspan="2" style="text-align: center"> <strong> Wybierz role użytkownika </strong></p:column>
+            </p:row>
+
+            <p:row>
+                <p:column style="width: 50%; text-align: center" > Dostepne role: </p:column>
+                <p:column style="width: 50%; text-align: center"> Role użytkownika: </p:column>
+            </p:row>
+
+            <p:row>
+                <p:column colspan="2">
+                    <p:pickList id="pickList" value="#{addUserController.rolesToPickList}" var="roles" itemLabel="#{roles}" itemValue="#{roles}"/>
+                </p:column>
+            </p:row>
+        </p:panelGrid>
 
 
-    <h:commandButton value="Dodaj" actionListener="#{addUserController.addUserForm()}" action="users?faces-redirect=true"></h:commandButton>
-    <h:commandButton action="users?faces-redirect=true" value="Wróc" />
-</h:form>
+        <h:commandButton value="Dodaj" actionListener="#{addUserController.addUserForm()}" action="users?faces-redirect=true"></h:commandButton>
+        <h:commandButton action="users?faces-redirect=true" value="Wróc" />
+    </h:form>
 </h:body>
 </html>
