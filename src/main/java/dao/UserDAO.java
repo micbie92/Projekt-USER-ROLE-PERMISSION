@@ -8,7 +8,7 @@ import javax.faces.bean.ApplicationScoped;
 import java.util.List;
 
 
-@ManagedBean(name ="userDAO")
+@ManagedBean(name ="userDAO2")
 @ApplicationScoped
 public class UserDAO extends AbstractDAO<User>{
 

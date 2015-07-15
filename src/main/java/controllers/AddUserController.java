@@ -6,7 +6,6 @@ import dao.RoleDAO;
 import dao.UserDAO;
 import forms.RoleForm;
 import forms.UserForm;
-import models.Role;
 import org.primefaces.model.DualListModel;
 
 import javax.annotation.PostConstruct;
@@ -72,10 +71,10 @@ public class AddUserController {
         this.roleDAO = roleDAO;
     }
 
-    @ManagedProperty(value = "#{userDAO}")
+    @ManagedProperty(value = "#{userDAO2}")
     UserDAO userDAO;
 
-    @ManagedProperty(value = "#{roleDAO}")
+    @ManagedProperty(value = "#{roleDAO2}")
     RoleDAO roleDAO;
 
     public void addUserForm() {

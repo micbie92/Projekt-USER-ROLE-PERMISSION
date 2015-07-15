@@ -29,6 +29,8 @@ public class UserListController implements Serializable {
         this.userDAO = userDAO;
     }
 
+
+
     public void deleteUser(UserForm userForm){
         userDAO.delete(UserHelper.convert_UF_To_U(userForm));
     }
@@ -42,7 +44,7 @@ public class UserListController implements Serializable {
         this.userFormList = userFormList;
     }
 
-    @ManagedProperty(value="#{userDAO}")
+    @ManagedProperty(value="#{userDAO2}")
     UserDAO userDAO;
 
     @PostConstruct

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@ManagedBean(name ="roleDAO")
+@ManagedBean(name ="roleDAO2")
 @ApplicationScoped
 
 public class RoleDAO extends AbstractDAO<Role> {

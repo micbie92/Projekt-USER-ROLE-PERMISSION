@@ -50,7 +50,7 @@ public class RoleListController implements Serializable {
         System.out.printf(selectedRoles);
     }
 
-    @ManagedProperty(value="#{roleDAO}")
+    @ManagedProperty(value="#{roleDAO2}")
     RoleDAO roleDAO;
 
     @PostConstruct

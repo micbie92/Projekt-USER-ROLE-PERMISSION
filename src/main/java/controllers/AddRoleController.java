@@ -31,7 +31,7 @@ public class AddRoleController {
         this.roleDAO = roleDAO;
     }
 
-    @ManagedProperty(value="#{roleDAO}")
+    @ManagedProperty(value="#{roleDAO2}")
     RoleDAO roleDAO;
 
     public void addRoleForm(){

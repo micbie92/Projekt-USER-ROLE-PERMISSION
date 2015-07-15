@@ -38,7 +38,7 @@ public class PermissionListController implements Serializable {
 
     }
 
-    @ManagedProperty(value="#{permissionDAO}")
+    @ManagedProperty(value="#{permissionDAO2}")
     PermissionDAO permissionDAO;
 
     @PostConstruct

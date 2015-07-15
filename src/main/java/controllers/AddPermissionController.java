@@ -31,7 +31,7 @@ public class AddPermissionController {
         this.permissionDAO = permissionDAO;
     }
 
-    @ManagedProperty(value="#{permissionDAO}")
+    @ManagedProperty(value="#{permissionDAO2}")
     PermissionDAO permissionDAO;
 
     public void addPermissionForm(){

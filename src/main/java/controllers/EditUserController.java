@@ -60,10 +60,10 @@ public class EditUserController {
         this.roleDAO = roleDAO;
     }
 
-    @ManagedProperty(value="#{userDAO}")
+    @ManagedProperty(value="#{userDAO2}")
     UserDAO userDAO;
 
-    @ManagedProperty(value="#{roleDAO}")
+    @ManagedProperty(value="#{roleDAO2}")
     RoleDAO roleDAO;
 
     public void editUserForm(){

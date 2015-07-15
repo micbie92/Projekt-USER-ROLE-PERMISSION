@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 
 
-@ManagedBean(name ="permissionDAO")
+@ManagedBean(name ="permissionDAO2")
 @ApplicationScoped
 
 public class PermissionDAO extends AbstractDAO<Permission> {
