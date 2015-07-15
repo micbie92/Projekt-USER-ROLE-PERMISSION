@@ -25,6 +25,18 @@ public class PermissionForm {
         this.id = permission.getId();
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PermissionForm that = (PermissionForm) o;
+
+        return !(id != null ? !id.equals(that.id) : that.id != null);
+
+    }
+
     public Integer getId() {
         return id;
     }

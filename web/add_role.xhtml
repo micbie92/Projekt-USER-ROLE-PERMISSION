@@ -26,11 +26,26 @@
             <p:column>
                 <h:inputText value="#{addRoleController.roleForm.shortcuts}" />
             </p:column>
-        </p:row>
+            </p:row>
+
+            <p:row>
+                <p:column colspan="2" style="text-align: center"> <strong> Wybierz uprawnienia roli </strong></p:column>
+            </p:row>
+
+            <p:row>
+                <p:column style="width: 50%; text-align: center" > Dostepne uprawnienia: </p:column>
+                <p:column style="width: 50%; text-align: center"> Uprawnienia roli: </p:column>
+            </p:row>
+
+            <p:row>
+                <p:column colspan="2">
+                    <p:pickList id="pickList" value="#{addRoleController.permissionsToPickList}" var="permissions" itemLabel="#{permissions}" itemValue="#{permissions}"/>
+                </p:column>
+            </p:row>
         </p:panelGrid>
 
-        <h:commandButton value="Dodaj" actionListener="#{addRoleController.addRoleForm()}" action="roles.xhtml?faces-redirect=true"></h:commandButton>
-        <h:commandButton action="roles.xhtml?faces-redirect=true" value="Wróc" />
+        <p:commandButton value="Dodaj" actionListener="#{addRoleController.addRoleForm()}" action="roles.xhtml?faces-redirect=true"></p:commandButton>
+        <p:commandButton action="roles.xhtml?faces-redirect=true" value="Wróc" />
     </h:form>
 </h:body>
 </html>

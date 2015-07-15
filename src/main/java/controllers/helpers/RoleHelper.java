@@ -1,7 +1,9 @@
 package controllers.helpers;
 
+import forms.PermissionForm;
 import forms.RoleForm;
 import models.Entity;
+import models.Permission;
 import models.Role;
 
 import java.util.ArrayList;
@@ -40,4 +42,11 @@ public class RoleHelper {
         return roleForm.getName();
     }
 
+    public static List<PermissionForm> getRolePermissionFormList(List<Permission> permissionList){
+        List<PermissionForm> permissionFormList = new ArrayList();
+        for(Permission permission: permissionList){
+            permissionFormList.add(PermissionHelper.convert_P_To_PF(permission));
+        }
+        return permissionFormList;
+    }
 }

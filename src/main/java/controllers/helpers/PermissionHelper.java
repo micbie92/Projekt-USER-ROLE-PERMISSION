@@ -37,4 +37,8 @@ public class PermissionHelper {
         permission.setPermissionShortcut(permissionForm.getShortcut());
         return permission;
     }
+
+    public static String convertPermissionToString(PermissionForm permissionForm){
+        return permissionForm.getName();
+    }
 }

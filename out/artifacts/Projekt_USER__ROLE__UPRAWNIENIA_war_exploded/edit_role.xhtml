@@ -4,31 +4,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+    <h:form>
+        <p:panelGrid style="margin-top:20px">
 
-<h:form>
-    <p:panelGrid style="margin-top:20px">
+            <p:row>
+                <p:column colspan="2" style="text-align: center"><b> EDYCJA ROLI </b></p:column>
+            </p:row>
 
-        <p:row>
-            <p:column colspan="2" style="text-align: center"><b> EDYCJA ROLI </b></p:column>
-        </p:row>
+            <p:row>
+                <p:column> Nazwa: </p:column>
+                <p:column>
+                    <h:inputText value="#{editRoleController.roleForm.name}" />
+                </p:column>
+            </p:row>
 
-        <p:row>
-            <p:column> Nazwa: </p:column>
+            <p:row>
+            <p:column> Skrót: </p:column>
             <p:column>
-                <h:inputText value="#{editRoleController.roleForm.name}" />
+                <h:inputText value="#{editRoleController.roleForm.shortcuts}" />
             </p:column>
-        </p:row>
+            </p:row>
 
-        <p:row>
-        <p:column> Skrót: </p:column>
-        <p:column>
-            <h:inputText value="#{editRoleController.roleForm.shortcuts}" />
-        </p:column>
-        </p:row>
+            <p:row>
+                <p:column colspan="2" style="text-align: center"> <strong> Wybierz uprawnienia roli </strong></p:column>
+            </p:row>
 
-    </p:panelGrid>
+            <p:row>
+                <p:column style="width: 50%; text-align: center" > Dostepne uprawnienia: </p:column>
+                <p:column style="width: 50%; text-align: center"> Uprawnienia roli: </p:column>
+            </p:row>
 
-    <h:commandButton value="Zapisz zmiany" actionListener="#{editRoleController.editRoleForm()}" action="roles?faces-redirect=true"></h:commandButton>
-    <h:commandButton action="roles?faces-redirect=true" value="Wróc" />
-</h:form>
+            <p:row>
+                <p:column colspan="2">
+                    <p:pickList id="pickList" value="#{editRoleController.permissionsToPickList}" var="permissions" itemLabel="#{permissions}" itemValue="#{permissions}"/>
+                </p:column>
+            </p:row>
+
+        </p:panelGrid>
+
+        <p:commandButton value="Zapisz zmiany" actionListener="#{editRoleController.editRoleForm()}" action="roles?faces-redirect=true"></p:commandButton>
+        <p:commandButton action="roles?faces-redirect=true" value="Wróc" />
+    </h:form>
+</h:body>
 </html>
