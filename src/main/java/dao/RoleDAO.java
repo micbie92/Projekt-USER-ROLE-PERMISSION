@@ -3,16 +3,13 @@ package dao;
 import models.Permission;
 import models.Role;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ApplicationScoped;
-import java.util.ArrayList;
+import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import java.util.List;
 
 
-@ManagedBean(name ="roleDAO2")
 @ApplicationScoped
-
-public class RoleDAO extends AbstractDAO<Role> {
+public class RoleDAO extends AbstractDAO<Role> implements Serializable{
 
     public RoleDAO() {
         init();

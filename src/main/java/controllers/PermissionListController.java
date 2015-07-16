@@ -5,13 +5,13 @@ import dao.PermissionDAO;
 import forms.PermissionForm;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean(name="permissionListController")
+@Named("permissionListController")
 @RequestScoped
 public class PermissionListController implements Serializable {
 
@@ -38,7 +38,7 @@ public class PermissionListController implements Serializable {
 
     }
 
-    @ManagedProperty(value="#{permissionDAO2}")
+    @Inject
     PermissionDAO permissionDAO;
 
     @PostConstruct

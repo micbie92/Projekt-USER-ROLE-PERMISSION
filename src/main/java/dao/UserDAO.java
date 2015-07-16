@@ -3,18 +3,23 @@ package dao;
 import models.Role;
 import models.User;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ApplicationScoped;
+
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.io.Serializable;
 import java.util.List;
 
 
-@ManagedBean(name ="userDAO2")
 @ApplicationScoped
-public class UserDAO extends AbstractDAO<User>{
+public class UserDAO extends AbstractDAO<User> implements Serializable{
 
     public UserDAO() {
         init();
     }
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     public void init() {
         add(new User("Jacek", "Placek", "fasfsasa@gmail.com", "533633108"));

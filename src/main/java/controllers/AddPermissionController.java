@@ -4,12 +4,13 @@ import controllers.helpers.PermissionHelper;
 import dao.PermissionDAO;
 import forms.PermissionForm;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 
-@ManagedBean(name ="addPermissionController")
+@Named("addPermissionController")
 @RequestScoped
 public class AddPermissionController {
 
@@ -31,7 +32,7 @@ public class AddPermissionController {
         this.permissionDAO = permissionDAO;
     }
 
-    @ManagedProperty(value="#{permissionDAO2}")
+    @Inject
     PermissionDAO permissionDAO;
 
     public void addPermissionForm(){

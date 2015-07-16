@@ -9,14 +9,14 @@ import forms.RoleForm;
 import org.primefaces.model.DualListModel;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@ManagedBean(name ="addRoleController")
+@Named("addRoleController")
 @RequestScoped
 public class AddRoleController {
 
@@ -70,10 +70,10 @@ public class AddRoleController {
         this.permissionDAO = permissionDAO;
     }
 
-    @ManagedProperty(value="#{roleDAO2}")
+    @Inject
     RoleDAO roleDAO;
 
-    @ManagedProperty(value="#{permissionDAO2}")
+    @Inject
     PermissionDAO permissionDAO;
 
     public void addRoleForm(){

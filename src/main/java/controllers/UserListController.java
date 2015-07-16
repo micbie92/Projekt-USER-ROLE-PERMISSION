@@ -5,13 +5,13 @@ import dao.UserDAO;
 import forms.UserForm;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean(name ="userListController")
+@Named("userListController")
 @RequestScoped
 public class UserListController implements Serializable {
 
@@ -44,7 +44,7 @@ public class UserListController implements Serializable {
         this.userFormList = userFormList;
     }
 
-    @ManagedProperty(value="#{userDAO2}")
+    @Inject
     UserDAO userDAO;
 
     @PostConstruct

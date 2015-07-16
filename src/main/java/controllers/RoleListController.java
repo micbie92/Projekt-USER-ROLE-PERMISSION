@@ -5,13 +5,13 @@ import dao.RoleDAO;
 import forms.RoleForm;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@ManagedBean(name="roleListController")
+@Named("roleListController")
 @RequestScoped
 public class RoleListController implements Serializable {
 
@@ -50,7 +50,7 @@ public class RoleListController implements Serializable {
         System.out.printf(selectedRoles);
     }
 
-    @ManagedProperty(value="#{roleDAO2}")
+    @Inject
     RoleDAO roleDAO;
 
     @PostConstruct

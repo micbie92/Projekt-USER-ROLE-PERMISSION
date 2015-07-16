@@ -9,17 +9,17 @@ import forms.UserForm;
 import org.primefaces.model.DualListModel;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.management.relation.RoleList;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@ManagedBean(name ="editUserController")
-@ViewScoped
+@Named("editUserController")
+@ApplicationScoped
 public class EditUserController {
 
 
@@ -60,10 +60,10 @@ public class EditUserController {
         this.roleDAO = roleDAO;
     }
 
-    @ManagedProperty(value="#{userDAO2}")
+    @Inject
     UserDAO userDAO;
 
-    @ManagedProperty(value="#{roleDAO2}")
+    @Inject
     RoleDAO roleDAO;
 
     public void editUserForm(){

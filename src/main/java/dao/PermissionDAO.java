@@ -3,14 +3,12 @@ package dao;
 import models.Permission;
 
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ApplicationScoped;
+import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 
 
-@ManagedBean(name ="permissionDAO2")
 @ApplicationScoped
-
-public class PermissionDAO extends AbstractDAO<Permission> {
+public class PermissionDAO extends AbstractDAO<Permission> implements Serializable{
 
     public PermissionDAO() {
         init();

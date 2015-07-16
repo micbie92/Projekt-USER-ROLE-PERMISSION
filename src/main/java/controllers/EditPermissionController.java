@@ -5,14 +5,15 @@ import dao.PermissionDAO;
 import forms.PermissionForm;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
 
 
-@ManagedBean(name ="editPermissionController")
-@ViewScoped
+@Named("editPermissionController")
+@ApplicationScoped
+//był ViewScoped
 public class EditPermissionController {
 
     private PermissionForm permissionForm = new PermissionForm();
@@ -43,7 +44,7 @@ public class EditPermissionController {
         this.permissionDAO = permissionDAO;
     }
 
-    @ManagedProperty(value="#{permissionDAO2}")
+    @Inject
     PermissionDAO permissionDAO;
 
     public void editPermissionForm(){

@@ -9,6 +9,8 @@ import java.util.Random;
 /**
  * Created by mbielecki on 10.07.15.
  */
+
+
 public class AbstractDAO<E extends Entity>{
 
     Random random = new Random();
